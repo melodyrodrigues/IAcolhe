@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MessageSquare, FileText, Map, Shield } from "lucide-react";
+import { MessageSquare, FileText, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -18,15 +18,12 @@ const Index = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-            Apoio completo para pessoas afetadas por enchentes e alagamentos
+            Assistência social para pessoas afetadas por enchentes e alagamentos
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+          <div className="flex justify-center pt-4">
             <Button asChild size="lg" className="text-lg h-14 shadow-primary">
               <Link to="/dashboard">Começar Atendimento</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="text-lg h-14">
-              <Link to="/mapa">Ver Áreas Afetadas</Link>
             </Button>
           </div>
         </div>
@@ -34,26 +31,16 @@ const Index = () => {
 
       {/* Features Section */}
       <section className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           <FeatureCard
             icon={<MessageSquare className="w-6 h-6" />}
             title="Atendimento IA"
-            description="Chat com assistente virtual para orientação social e jurídica"
+            description="Chat com assistente virtual para orientação sobre direitos sociais"
           />
           <FeatureCard
             icon={<FileText className="w-6 h-6" />}
             title="Upload de Documentos"
             description="Envie RG, CPF e comprovantes com leitura automática"
-          />
-          <FeatureCard
-            icon={<Map className="w-6 h-6" />}
-            title="Mapa de Áreas"
-            description="Visualize regiões alagadas em tempo real"
-          />
-          <FeatureCard
-            icon={<Shield className="w-6 h-6" />}
-            title="Protocolo de Benefício"
-            description="Simule e acompanhe seu pedido de auxílio"
           />
         </div>
       </section>
@@ -82,16 +69,6 @@ const Index = () => {
               <div>
                 <h3 className="font-semibold text-foreground mb-2">Envie seus Documentos</h3>
                 <p>Faça upload de RG, CPF e comprovantes - nossa IA extrai as informações automaticamente</p>
-              </div>
-            </div>
-            
-            <div className="flex gap-4">
-              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-2">Gere seu Protocolo</h3>
-                <p>Simule e crie seu protocolo de benefício com todas as informações organizadas</p>
               </div>
             </div>
           </div>
