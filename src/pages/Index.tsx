@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { MessageSquare, FileText, Shield } from "lucide-react";
+import { Shield } from "lucide-react";
 import { Link } from "react-router-dom";
+import StatisticsCard from "@/components/StatisticsCard";
 
 const Index = () => {
   return (
@@ -41,11 +42,7 @@ const Index = () => {
               <p className="text-muted-foreground text-sm">Painel de Análise - Agentes Públicos</p>
             </div>
           </Link>
-          <FeatureCard
-            icon={<FileText className="w-6 h-6" />}
-            title="Analise Documental IA"
-            description="Análise inteligente de documentos e comprovantes com IA"
-          />
+          <StatisticsCard />
         </div>
       </section>
 
