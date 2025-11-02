@@ -14,7 +14,7 @@ const Dashboard = () => {
         {/* Header */}
         <div className="mb-8">
           <Link to="/">
-            <h1 className="text-3xl font-bold text-foreground">Clima Justo</h1>
+            <h1 className="text-3xl font-bold text-foreground">IAcolhe</h1>
           </Link>
         </div>
 
