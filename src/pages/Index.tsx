@@ -39,8 +39,8 @@ const Index = () => {
           />
           <FeatureCard
             icon={<FileText className="w-6 h-6" />}
-            title="Upload de Documentos"
-            description="Envie RG, CPF e comprovantes com leitura automática"
+            title="Analise Documental IA"
+            description="Análise inteligente de documentos e comprovantes com IA"
           />
         </div>
       </section>
