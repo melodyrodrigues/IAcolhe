@@ -35,7 +35,7 @@ const Index = () => {
           <FeatureCard
             icon={<MessageSquare className="w-6 h-6" />}
             title="Acesso Governo"
-            description="Acesso de Agentes Públicos"
+            description="Acesso CIDADÃO"
             link="/dashboard"
           />
           <FeatureCard
