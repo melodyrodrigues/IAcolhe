@@ -34,7 +34,7 @@ const Index = () => {
           />
           <FeatureCard
             icon={<FileText className="w-6 h-6" />}
-            title="Analise Documental IA"
+            title="Governo"
             description="Análise inteligente de documentos e comprovantes com IA"
             link="/document-analytics"
           />

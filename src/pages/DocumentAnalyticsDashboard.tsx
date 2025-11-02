@@ -227,7 +227,7 @@ const DocumentAnalyticsDashboard = () => {
 
         <Card className="mt-8">
           <CardHeader>
-            <CardTitle>Análise Documental com IA</CardTitle>
+            <CardTitle>Sistema de Análise Documental</CardTitle>
             <CardDescription>
               Sistema inteligente de validação de documentos e comprovantes
             </CardDescription>
