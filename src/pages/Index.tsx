@@ -68,7 +68,7 @@ const Index = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-foreground mb-2">Envie seus Documentos</h3>
-                <p>Faça upload de RG, CPF e comprovantes - nossa IA extrai as informações automaticamente</p>
+                <p>Envie seus documentos conforme orientação da assistente virtual</p>
               </div>
             </div>
           </div>
