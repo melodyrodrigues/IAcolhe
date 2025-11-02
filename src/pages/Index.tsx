@@ -10,7 +10,7 @@ const Index = () => {
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <div className="inline-flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm mb-4">
             <Shield className="w-4 h-4 text-secondary" />
-            <span className="text-sm font-medium text-foreground">Assistência Social e Jurídica</span>
+            <span className="text-sm font-medium text-foreground">Assistência social e concessão de benefícios</span>
           </div>
           
           <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
