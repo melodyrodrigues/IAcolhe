@@ -112,52 +112,91 @@ const DocumentAnalyticsDashboard = () => {
           </div>
         )}
 
-        <Card className="mt-8">
-          <CardHeader>
-            <CardTitle>Sobre o Dashboard</CardTitle>
-            <CardDescription>
-              Este dashboard apresenta estatísticas em tempo real sobre as solicitações de benefícios
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="flex gap-3">
-              <Clock className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+          <Card>
+            <CardHeader>
+              <CardTitle>Sobre o Dashboard</CardTitle>
+              <CardDescription>
+                Este dashboard apresenta estatísticas em tempo real sobre as solicitações de benefícios
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="flex gap-3">
+                <Clock className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="font-semibold text-foreground">Pendentes</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Solicitações aguardando análise e decisão
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="font-semibold text-foreground">Aprovadas</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Solicitações aprovadas para todos os tipos de benefícios
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <XCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="font-semibold text-foreground">Indeferidas</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Solicitações que não foram aprovadas
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <FileText className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="font-semibold text-foreground">Aprovadas - Auxílio Reconstrução</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Solicitações aprovadas especificamente para o benefício de Auxílio Reconstrução
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Análise Documental com IA</CardTitle>
+              <CardDescription>
+                Sistema inteligente de validação de documentos e comprovantes
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
               <div>
-                <h3 className="font-semibold text-foreground">Pendentes</h3>
+                <h3 className="font-semibold text-foreground mb-2">Documentos Processados</h3>
+                <ul className="text-sm text-muted-foreground space-y-1">
+                  <li>• Comprovantes de residência (contas de água, luz, telefone)</li>
+                  <li>• Documentos de identificação (RG, CNH, CPF)</li>
+                  <li>• Fotos de danos à moradia (fachada, interior, close-up)</li>
+                  <li>• Boletins de ocorrência e laudos técnicos</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground mb-2">Verificações Automáticas</h3>
+                <ul className="text-sm text-muted-foreground space-y-1">
+                  <li>• Validação de autenticidade dos documentos</li>
+                  <li>• Extração de dados pessoais (nome, CPF, endereço)</li>
+                  <li>• Análise de conformidade de endereço</li>
+                  <li>• Detecção de qualidade e legibilidade</li>
+                  <li>• Verificação de consistência entre documentos</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground mb-2">Benefícios do Sistema</h3>
                 <p className="text-sm text-muted-foreground">
-                  Solicitações aguardando análise e decisão
+                  A análise automatizada reduz o tempo de processamento e aumenta a precisão 
+                  na validação de documentos, permitindo decisões mais rápidas e consistentes.
                 </p>
               </div>
-            </div>
-            <div className="flex gap-3">
-              <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-              <div>
-                <h3 className="font-semibold text-foreground">Aprovadas</h3>
-                <p className="text-sm text-muted-foreground">
-                  Solicitações aprovadas para todos os tipos de benefícios
-                </p>
-              </div>
-            </div>
-            <div className="flex gap-3">
-              <XCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
-              <div>
-                <h3 className="font-semibold text-foreground">Indeferidas</h3>
-                <p className="text-sm text-muted-foreground">
-                  Solicitações que não foram aprovadas
-                </p>
-              </div>
-            </div>
-            <div className="flex gap-3">
-              <FileText className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-              <div>
-                <h3 className="font-semibold text-foreground">Aprovadas - Auxílio Reconstrução</h3>
-                <p className="text-sm text-muted-foreground">
-                  Solicitações aprovadas especificamente para o benefício de Auxílio Reconstrução
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </div>
   );
