@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { FileText, CheckCircle, XCircle, Clock } from "lucide-react";
+import { FileText, CheckCircle, XCircle, Clock, FileCheck, AlertCircle, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -57,6 +57,41 @@ const DocumentAnalyticsDashboard = () => {
     },
   ];
 
+  const aiAnalyticsCards = [
+    {
+      title: "Documentos Processados",
+      value: 1247,
+      icon: FileCheck,
+      color: "text-purple-500",
+      bgColor: "bg-purple-500/10",
+      description: "Total analisados por IA",
+    },
+    {
+      title: "Taxa de Validação",
+      value: "94.2%",
+      icon: TrendingUp,
+      color: "text-emerald-500",
+      bgColor: "bg-emerald-500/10",
+      description: "Documentos válidos",
+    },
+    {
+      title: "Documentos com Problemas",
+      value: 73,
+      icon: AlertCircle,
+      color: "text-orange-500",
+      bgColor: "bg-orange-500/10",
+      description: "Requerem revisão manual",
+    },
+    {
+      title: "Tempo Médio de Análise",
+      value: "3.8s",
+      icon: Clock,
+      color: "text-cyan-500",
+      bgColor: "bg-cyan-500/10",
+      description: "Por documento",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-hero p-4 md:p-8">
       <div className="container mx-auto max-w-6xl">
@@ -86,30 +121,60 @@ const DocumentAnalyticsDashboard = () => {
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {statCards.map((stat) => (
-              <Card key={stat.title} className="hover:shadow-lg transition-all duration-300">
-                <CardHeader className="pb-3">
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-sm font-medium text-muted-foreground">
-                      {stat.title}
-                    </CardTitle>
-                    <div className={`p-2 rounded-lg ${stat.bgColor}`}>
-                      <stat.icon className={`w-5 h-5 ${stat.color}`} />
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {statCards.map((stat) => (
+                <Card key={stat.title} className="hover:shadow-lg transition-all duration-300">
+                  <CardHeader className="pb-3">
+                    <div className="flex items-center justify-between">
+                      <CardTitle className="text-sm font-medium text-muted-foreground">
+                        {stat.title}
+                      </CardTitle>
+                      <div className={`p-2 rounded-lg ${stat.bgColor}`}>
+                        <stat.icon className={`w-5 h-5 ${stat.color}`} />
+                      </div>
                     </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className={`text-3xl font-bold ${stat.color}`}>
-                    {stat.value}
-                  </div>
-                  <CardDescription className="mt-1">
-                    {stat.value === 1 ? "solicitação" : "solicitações"}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                  </CardHeader>
+                  <CardContent>
+                    <div className={`text-3xl font-bold ${stat.color}`}>
+                      {stat.value}
+                    </div>
+                    <CardDescription className="mt-1">
+                      {stat.value === 1 ? "solicitação" : "solicitações"}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="mt-8">
+              <h2 className="text-2xl font-bold text-foreground mb-4">Análise Documental com IA</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {aiAnalyticsCards.map((stat) => (
+                  <Card key={stat.title} className="hover:shadow-lg transition-all duration-300">
+                    <CardHeader className="pb-3">
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="text-sm font-medium text-muted-foreground">
+                          {stat.title}
+                        </CardTitle>
+                        <div className={`p-2 rounded-lg ${stat.bgColor}`}>
+                          <stat.icon className={`w-5 h-5 ${stat.color}`} />
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className={`text-3xl font-bold ${stat.color}`}>
+                        {stat.value}
+                      </div>
+                      <CardDescription className="mt-1">
+                        {stat.description}
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </>
         )}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
