@@ -1,73 +1,118 @@
-# Welcome to your Lovable project
+# Clima Justo
 
-## Project info
+Sistema de apoio financeiro para reconstrução de moradias afetadas por eventos climáticos no Rio Grande do Sul.
 
-**URL**: https://lovable.dev/projects/55640eda-de7f-4ea0-a13a-d1ffe0dc11e7
+## 📋 Sobre o Projeto
 
-## How can I edit this code?
+O **Clima Justo** é uma plataforma digital que facilita o acesso ao programa de **Auxílio Reconstrução**, oferecendo suporte tecnológico para cidadãos e gestores públicos no processo de solicitação e análise de benefícios para reparos e recuperação de moradias danificadas por eventos climáticos.
 
-There are several ways of editing your application.
+### Principais Funcionalidades
 
-**Use Lovable**
+#### Para Cidadãos
+- **Assistente Virtual Inteligente**: Chatbot com IA que orienta o solicitante através do processo de elegibilidade
+- **Triagem Automatizada**: Validação inicial de elegibilidade baseada em critérios objetivos
+- **Upload de Documentos**: Sistema seguro para envio de comprovantes e evidências (fotos, documentos de identificação, comprovantes de residência)
+- **Processamento OCR**: Extração automática de dados de documentos enviados
+- **Acompanhamento em Tempo Real**: Visualização do status do processo
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/55640eda-de7f-4ea0-a13a-d1ffe0dc11e7) and start prompting.
+#### Para Gestores Públicos
+- **Dashboard Governo**: Painel administrativo para análise e gestão de solicitações
+- **Análise Documental com IA**: Ferramentas de processamento inteligente de documentos
+- **Relatórios e Analytics**: Visão consolidada de solicitações e indicadores
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🎯 Objetivo
 
-**Use your preferred IDE**
+Simplificar e acelerar o acesso ao auxílio reconstrução, garantindo:
+- **Acessibilidade**: Interface intuitiva e assistência automatizada
+- **Transparência**: Critérios claros de elegibilidade
+- **Eficiência**: Redução do tempo de análise através de automação
+- **Empatia**: Atendimento humanizado e acolhedor em momento de vulnerabilidade
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🚀 Tecnologias
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Este projeto utiliza tecnologias modernas para garantir performance, segurança e escalabilidade:
 
-Follow these steps:
+- **Frontend**: React 18 + TypeScript + Vite
+- **Estilização**: Tailwind CSS + shadcn/ui
+- **Backend**: Lovable Cloud (Supabase)
+- **Inteligência Artificial**: Modelos Gemini 2.5 (via Lovable AI Gateway)
+- **Processamento de Documentos**: OCR via Edge Functions
+- **Gerenciamento de Estado**: TanStack Query
+- **Roteamento**: React Router DOM
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 📦 Estrutura do Projeto
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+├── src/
+│   ├── components/       # Componentes React reutilizáveis
+│   │   ├── ChatInterface.tsx      # Interface de chat com IA
+│   │   └── DocumentUpload.tsx     # Upload e análise de documentos
+│   ├── pages/           # Páginas da aplicação
+│   │   ├── Index.tsx              # Página inicial
+│   │   ├── Dashboard.tsx          # Dashboard do cidadão
+│   │   └── DocumentAnalyticsDashboard.tsx  # Dashboard do governo
+│   └── integrations/    # Integrações com serviços externos
+│       └── supabase/              # Cliente Supabase
+├── supabase/
+│   └── functions/       # Edge Functions
+│       ├── chat/        # Função de chat com IA
+│       └── ocr-extract/ # Função de extração OCR
+└── public/              # Arquivos estáticos
 ```
 
-**Edit a file directly in GitHub**
+## 🔐 Segurança e Privacidade
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- Todos os dados são armazenados de forma segura no backend
+- Consentimento explícito para processamento de dados pessoais
+- Comunicação criptografada (HTTPS)
+- Conformidade com LGPD (Lei Geral de Proteção de Dados)
 
-**Use GitHub Codespaces**
+## 📋 Critérios de Elegibilidade
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+O programa atende exclusivamente:
+- Residentes do Estado do **Rio Grande do Sul**
+- Moradias afetadas por eventos climáticos (enchentes, vendavais, deslizamentos, etc.)
+- Comprovação através de documentação apropriada
 
-## What technologies are used for this project?
+## 🤖 Fluxo do Assistente Virtual
 
-This project is built with:
+1. **Confirmação de Região**: Validação de estado e município
+2. **Dados do Evento**: Data e tipo do evento climático
+3. **Validação de CPF**: Verificação de elegibilidade
+4. **Orientação Documental**: Lista de documentos necessários e instruções de envio
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 💻 Como Executar Localmente
 
-## How can I deploy this project?
+```bash
+# Instalar dependências
+npm install
 
-Simply open [Lovable](https://lovable.dev/projects/55640eda-de7f-4ea0-a13a-d1ffe0dc11e7) and click on Share -> Publish.
+# Iniciar servidor de desenvolvimento
+npm run dev
 
-## Can I connect a custom domain to my Lovable project?
+# Acessar aplicação
+http://localhost:8080
+```
 
-Yes, you can!
+## 🌐 Deploy
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+A aplicação está hospedada e pode ser acessada através do Lovable.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Para fazer deploy de novas versões:
+1. Acesse o projeto no [Lovable](https://lovable.dev/projects/55640eda-de7f-4ea0-a13a-d1ffe0dc11e7)
+2. Clique em "Publish" no canto superior direito
+
+## 📞 Suporte
+
+Para dúvidas sobre o programa de auxílio reconstrução, entre em contato com:
+- Defesa Civil do seu município
+- Assistência Social local
+- Governo do Estado do Rio Grande do Sul
+
+## 📄 Licença
+
+Este projeto foi desenvolvido para atender às necessidades do programa público de auxílio reconstrução no Rio Grande do Sul.
+
+---
+
+**Desenvolvido com ❤️ para ajudar a reconstruir vidas**
